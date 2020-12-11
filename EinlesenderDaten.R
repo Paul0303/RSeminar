@@ -1,3 +1,4 @@
+library(pls)
 library(fs)
 (MinW_text <- path_home("Documents", "R", "RSeminar", "Mineralwasser.txt"))
   #Path wird zur Datei kreiert
