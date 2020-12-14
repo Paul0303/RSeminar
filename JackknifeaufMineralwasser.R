@@ -1,5 +1,5 @@
-MinGehalt <- seq(1, 134, by = 1)
-mineralwasser.pls <- plsr(Mineralwaesser ~ M, data = Mineralwasser, validation = "LOO",
+MinGehalt <- seq(1, 133, by = 1)
+mineralwasser.pls <- plsr(X1 ~.,data = mineraldatenT, validation = "LOO",
                              ncomp = 2,
                              jackknife = TRUE)
 n <- length(Mineralwasser$Natrium)
