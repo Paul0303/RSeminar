@@ -12,3 +12,4 @@ data("gasoline", package = "pls")
 #Mineraldaten selektieren
 mineraldaten <- select(Mineralwasser, Natrium,Kalium, Magnesium, Calcium, Mangan, 
                        Chlorid, Sulfat, Hydrogencarbonat, Nitrat, Nitrit, Fluorid)
+mineraldatenT <- data.frame(t(mineraldaten))
