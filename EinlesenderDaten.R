@@ -9,3 +9,6 @@ Mineralwasser <- read.table(MinW_text, header = TRUE, sep = ";")
 MineralwasserRohdaten <- read.table(MinWRoh_text,header = TRUE, sep = ";")
 #Gasoline data holen
 data("gasoline", package = "pls")
+#Mineraldaten selektieren
+mineraldaten <- select(Mineralwasser, Natrium,Kalium, Magnesium, Calcium, Mangan, 
+                       Chlorid, Sulfat, Hydrogencarbonat, Nitrat, Nitrit, Fluorid)
