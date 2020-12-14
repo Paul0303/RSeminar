@@ -6,7 +6,7 @@ n <- length(gasoline$octane)
 b.oob <- gasoline.pls$validation$coefficients[, , 2, ]
 bias.est <- (n-1) * (rowMeans(b.oob) - coef(gasoline.pls))
 plot(wavelengths, bias.est, xlab = "wavelength", ylab = "bias",
-     type = "h", main = "Jackknife bias estimates",
+     type = "l", main = "Jackknife bias estimates",
      col = "gray")
 
 #Erzeugt die rote Linie, var.jack ist Varianz der Jackknife estimation
