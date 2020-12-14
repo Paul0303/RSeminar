@@ -1,12 +1,12 @@
 MinGehalt <- seq(1, 133, by = 1)
 mineralwasser.pls <- plsr(X1 ~.,data = mineraldatenT, validation = "LOO",
-                             ncomp = 2,
+                             ncomp = 5,
                              jackknife = TRUE)
 n <- length(Mineralwasser$Natrium)
-b.oob <- mineralwasser.pls$validation$coefficients[, , 2, ]
+b.oob <- mineralwasser.pls$validation$coefficients[, , 5, ]
 bias.est <- (n-1)*(rowMeans(b.oob)-coef(mineralwasser.pls))
 plot(MinGehalt, bias.est, xlab = "Mingehalt (mg)", ylab = "bias",
-     type = "h", main = "Jackknife bias estimates",
+     type = "l", main = "Jackknife bias estimates",
      col = "gray")
 
 var.est <- var.jack(mineralwasser.pls)
