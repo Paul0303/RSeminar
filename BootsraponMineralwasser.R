@@ -31,7 +31,7 @@ min.pcr.cv <- pcr(Gesamt.Mineralieninmg.Liter ~ ., data = mineraldaten, ncomp = 
 min.pcr.loo <- pcr(Gesamt.Mineralieninmg.Liter ~ ., data = mineraldaten, ncomp = npc, 
                   validation = "LOO")
 bp <- barplot(sqrt(error.632),
-              ylim = c(0, 80), col = "peachpuff")
+              ylim = c(0, 600), col = "peachpuff")
 lines(bp, sqrt(c(min.pcr.cv$validation$PRESS) / nmin),
       col = 2, lwd = 2)
 lines(bp, sqrt(c(min.pcr.loo$validation$PRESS) / nmin),
