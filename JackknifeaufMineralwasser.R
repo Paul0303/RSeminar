@@ -4,7 +4,7 @@ seq(1, 11, by = 1)
 mineralwasser.pls <- plsr(Gesamt.Mineralieninmg.Liter ~.,data = mineraldaten, validation = "LOO",
                              ncomp = 2,
                              jackknife = TRUE)
-n <- length(Mineralwasser$Natrium)
+n <- length(Mineralwasser$Gesamt.Mineralieninmg.Liter)
 b.oob <- mineralwasser.pls$validation$coefficients[, , 2, ]
 bias.est <- (n-1)*(rowMeans(b.oob)-coef(mineralwasser.pls))
 plot(MinGehalt, bias.est, xlab = "Mineralien", ylab = "bias",
