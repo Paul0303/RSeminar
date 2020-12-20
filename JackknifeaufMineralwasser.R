@@ -8,8 +8,11 @@ n <- length(Mineralwasser$Natrium)
 b.oob <- mineralwasser.pls$validation$coefficients[, , 2, ]
 bias.est <- (n-1)*(rowMeans(b.oob)-coef(mineralwasser.pls))
 plot(MinGehalt, bias.est, xlab = "Mineralien", ylab = "bias",
-     type = "l", main = "Jackknife bias estimates",
-     col = "gray")
+     type = "b", main = "Jackknife bias estimates",
+     col = "blue", xgap.axis = 1)
 
 var.est <- var.jack(mineralwasser.pls)
 lines(MinGehalt, var.est, col = "red")
+
+legend("topright", legend = c("Bias", "Varianz"), lty = 1, lwd = 2,
+       col = c("blue", "red"))
