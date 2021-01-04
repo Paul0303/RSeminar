@@ -7,7 +7,7 @@ min.pcr.bootCI <-
 
 dim(min.pcr.bootCI$t)
 
-smallest <- which.min(min.pcr.bootCI$t0)
-plot(min.pcr.bootCI, index = smallest)
+highest <- which.max(min.pcr.bootCI$t0)
+plot(min.pcr.bootCI, index = highest)
 
 boot.ci(boot.out = min.pcr.bootCI, type = c("perc", "bca"))
