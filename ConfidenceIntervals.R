@@ -12,7 +12,7 @@ min.bootpcr <- pcr(Gesamt.Mineralieninmg.Liter ~., data = mineraldaten,
 coefs[, i] <- c(coef(min.bootpcr))
 }
 
-matplot(mineralien, coefs, type = "n",
+matplot(mineralien, coefs, type = "l",
         ylab = "Coefficients", xlab = "Mineralien")
 abline(h = 0, col = "gray")
 polygon(c(mineralien, rev(mineralien)),
